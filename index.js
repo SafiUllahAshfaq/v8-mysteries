@@ -84,13 +84,13 @@ async function MapBehaviour() {
 
 
 async function ForEachBehaviour() {	
-	await Promise.all(Array.from({ length: 10 }).forEach(async (e, i) => {
+	Array.from({ length: 10 }).forEach(async (e, i) => {
 		console.log(`iter: ${i}`);
 
 		const x = await new Promise((resolve) => setTimeout(() => resolve(i), 2000))
 
 		console.log({ x });
-	}))
+	})
 }
 
 async function ForOfBheaviour() {
@@ -108,5 +108,5 @@ async function ForOfBheaviour() {
 // SequentialExecute();
 // ParallelExecute();
 // MapBehaviour();
-// ForEachBehaviour();
-ForOfBheaviour();
+ForEachBehaviour();
+// ForOfBheaviour();
